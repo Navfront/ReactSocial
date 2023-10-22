@@ -1,0 +1,11 @@
+[
+  { "id": "check-sofas", "descr": "Диваны", "checked": "checked" },
+  { "id": "check-armchairs", "descr": "Кресла", "checked": "" },
+  { "id": "check-poufs", "descr": "Пуфы", "checked": "" },
+  { "id": "check-beds", "descr": "Кровати", "checked": "" },
+  { "id": "check-curbstones", "descr": "Тумбы", "checked": "" },
+  { "id": "check-dressers", "descr": "Комоды", "checked": "" },
+  { "id": "check-chairs", "descr": "Стулья", "checked": "" },
+  { "id": "check-tables", "descr": "Столы", "checked": "" },
+  { "id": "check-accessories", "descr": "Аксессуары", "checked": "" }
+]

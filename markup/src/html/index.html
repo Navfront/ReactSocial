@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.min.css" />
+    <title>React Social</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Личный кабинет</h1>
+      <div class="header__top">
+        <div class="header__user-block">
+          <a class="user-block__link" href="#">
+            <img
+              class="user-block__img"
+              src="../img/ava.jpg"
+              alt="Аватар пользователя"
+              height="30"
+              width="30"
+            />
+            <span class="user-block__username">Константин</span>
+          </a>
+        </div>
+        <form class="header__search search" action="#" method="get">
+          <label for="search">
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="currentColor">
+              <path
+                d="M13.5407 11.9497H12.7035L12.4067 11.6564C13.4454 10.418 14.0707 8.81018 14.0707 7.06118C14.0707 3.16124 10.9865 0 7.18169 0C3.37686 0 0.292725 3.16124 0.292725 7.06118C0.292725 10.9611 3.37686 14.1224 7.18169 14.1224C8.88804 14.1224 10.4566 13.4814 11.6648 12.4168L11.951 12.721V13.5792L17.2502 19L18.8293 17.3814L13.5407 11.9497ZM7.18169 11.9497C4.54269 11.9497 2.41241 9.76615 2.41241 7.06118C2.41241 4.3562 4.54269 2.17267 7.18169 2.17267C9.8207 2.17267 11.951 4.3562 11.951 7.06118C11.951 9.76615 9.8207 11.9497 7.18169 11.9497Z"
+              />
+            </svg>
+            Поиск
+          </label>
+          <input class="search__input" id="search" type="text" name="search" />
+        </form>
+        <button
+          class="header__comments-btn comments__btn comments-btn"
+          type="button"
+        >
+          <span class="comments-btn__count">4</span>
+          <svg
+            class="comments-btn__icon"
+            width="20"
+            height="16"
+            viewBox="0 0 20 16"
+            fill="currentColor"
+          >
+            <path
+              d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="header__bottom">
+        <nav class="header__nav header-nav">
+          <ul class="header-nav__list list-reset">
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#"
+                ><svg
+                  class="header-nav__link-svg"
+                  width="12"
+                  height="8"
+                  viewBox="0 0 12 8"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M6 0C3.27273 0 0.943636 1.65867 0 4C0.943636 6.34133 3.27273 8 6 8C8.72727 8 11.0564 6.34133 12 4C11.0564 1.65867 8.72727 0 6 0ZM6 6.66667C4.49455 6.66667 3.27273 5.472 3.27273 4C3.27273 2.528 4.49455 1.33333 6 1.33333C7.50545 1.33333 8.72727 2.528 8.72727 4C8.72727 5.472 7.50545 6.66667 6 6.66667ZM6 2.4C5.09455 2.4 4.36364 3.11467 4.36364 4C4.36364 4.88533 5.09455 5.6 6 5.6C6.90545 5.6 7.63636 4.88533 7.63636 4C7.63636 3.11467 6.90545 2.4 6 2.4Z"
+                  />
+                </svg>
+                Просмотренное</a
+              >
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">
+                <svg
+                  class="header-nav__link-svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M1 2H0V9C0 9.55 0.45 10 1 10H8V9H1V2ZM9 0H3C2.45 0 2 0.45 2 1V7C2 7.55 2.45 8 3 8H9C9.55 8 10 7.55 10 7V1C10 0.45 9.55 0 9 0ZM8.5 4.5H6.5V6.5H5.5V4.5H3.5V3.5H5.5V1.5H6.5V3.5H8.5V4.5Z"
+                  />
+                </svg>
+                Сохранённое</a
+              >
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">
+                <svg
+                  class="header-nav__link-svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M0 7.91696V10H2.08304L8.22664 3.85641L6.14359 1.77336L0 7.91696ZM9.83752 2.24552C10.0542 2.02888 10.0542 1.67893 9.83752 1.4623L8.5377 0.162477C8.32107 -0.0541591 7.97112 -0.0541591 7.75448 0.162477L6.73795 1.179L8.821 3.26205L9.83752 2.24552Z"
+                  />
+                </svg>
+
+                Мои посты</a
+              >
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="#">
+                <svg
+                  class="header-nav__link-svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M10.8 0H1.2C0.54 0 0 0.54 0 1.2V8.4C0 9.06 0.54 9.6 1.2 9.6H9.6L12 12V1.2C12 0.54 11.46 0 10.8 0ZM9.6 7.2H2.4V6H9.6V7.2ZM9.6 5.4H2.4V4.2H9.6V5.4ZM9.6 3.6H2.4V2.4H9.6V3.6Z"
+                  />
+                </svg>
+
+                Прокомментированное</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <label class="visually-hidden" for="select-nav"
+          >Какие посты смотреть</label
+        >
+        <select class="header__select-nav select-nav" id="select-nav">
+          <option class="select-nav__option" value="my-posts">
+            Просмотренное
+          </option>
+          <option class="select-nav__option" value="saved">Сохранённое</option>
+          <option class="select-nav__option" value="seen">Просмотренное</option>
+          <option class="select-nav__option" value="commented">
+            Покомментированное
+          </option>
+          <option class="select-nav__close" value="close">Закрыть</option>
+        </select>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section posts">
+        <h2 class="visually-hidden">Лучшие посты</h2>
+        <ul class="posts__list list-reset">
+          <li class="posts__item post">
+            <h3 class="post__title">Реализация намеченных плановых заданий</h3>
+            <div class="post__meta post-meta">
+              <span class="post-meta__published"
+                >опубликовано 4 часа назад</span
+              >
+              <a class="post-meta__author author" href="#">
+                <img
+                  class="post__ava"
+                  src="img/ava.jpg"
+                  height="20"
+                  width="20"
+                />
+                Константин Кодов
+              </a>
+            </div>
+            <div class="post__comments comments">
+              <button class="comments__show-btn" type="button">
+                Комментарий
+              </button>
+              <ul class="comments__list list-reset">
+                <li class="comments__item comment">
+                  <h4>
+                    <span class="visually-hidden">Комментарий автора:</span>
+                    <a class="comment__author author" href="#">
+                      <img
+                        class="post__ava"
+                        src="img/ava.jpg"
+                        height="20"
+                        width="20"
+                      />
+                      Константин Кодов
+                    </a>
+                    <div class="comment__content">
+                      <p>
+                        Банальные, но неопровержимые выводы, а также многие
+                        известные личности лишь добавляют фракционных
+                        разногласий и рассмотрены исключительно в разрезе
+                        маркетинговых и финансовых предпосылок. Таким образом,
+                        постоянное информационно-пропагандистское обеспечение
+                        нашей деятельности является качественно новой ступенью
+                        прогресса профессионального сообщества.
+                      </p>
+                    </div>
+                  </h4>
+                </li>
+              </ul>
+              <button class="comments__more-btn" type="button">
+                + ещё 3 ваших комментария
+              </button>
+            </div>
+            <div class="post__likes likes">
+              <button class="likes__btn" type="button">
+                <span class="visually-hidden">Лайкнуть</span>
+                <svg width="19" height="10" viewBox="0 0 19 10" fill="none">
+                  <path d="M9.5 0L0 10H19L9.5 0Z" fill="currentColor" />
+                </svg>
+              </button>
+              <span class="likes__count">199</span>
+              <button class="likes__btn likes__btn--down" type="button">
+                <span class="visually-hidden">Лайкнуть</span>
+                <svg width="19" height="10" viewBox="0 0 19 10" fill="none">
+                  <path d="M9.5 0L0 10H19L9.5 0Z" fill="currentColor" />
+                </svg>
+              </button>
+            </div>
+            <div class="post__options options">
+              <button class="options__btn" type="button">
+                <svg
+                  class="options__icon"
+                  width="5"
+                  height="20"
+                  viewBox="0 0 5 20"
+                  fill="currentColor"
+                >
+                  <circle cx="2.5" cy="2.5" r="2.5" />
+                  <circle cx="2.5" cy="10" r="2.5" />
+                  <circle cx="2.5" cy="17.5" r="2.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="post__controls controls">
+              <ul class="controls__list list-reset">
+                <li class="controls__item">
+                  <a type="button" class="controls__btn" href="#">
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M11.2 0L13.032 1.90833L9.128 5.975L5.928 2.64167L0 8.825L1.128 10L5.928 5L9.128 8.33333L14.168 3.09167L16 5V0H11.2Z"
+                      />
+                    </svg>
+                    <span class="controls__btn-descr">
+                      Статистика публикации
+                    </span>
+                  </a>
+                </li>
+                <li class="controls__item">
+                  <button type="button" class="controls__btn">
+                    <svg
+                      width="12"
+                      height="14"
+                      viewBox="0 0 12 14"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M10 9.89558C9.49333 9.89558 9.04 10.1064 8.69333 10.4367L3.94 7.52008C3.97333 7.35843 4 7.19679 4 7.02811C4 6.85944 3.97333 6.69779 3.94 6.53614L8.64 3.64759C9 3.999 9.47333 4.21687 10 4.21687C11.1067 4.21687 12 3.2751 12 2.10843C12 0.941767 11.1067 0 10 0C8.89333 0 8 0.941767 8 2.10843C8 2.27711 8.02667 2.43875 8.06 2.6004L3.36 5.48896C3 5.13755 2.52667 4.91968 2 4.91968C0.893333 4.91968 0 5.86145 0 7.02811C0 8.19478 0.893333 9.13655 2 9.13655C2.52667 9.13655 3 8.91867 3.36 8.56727L8.10667 11.491C8.07333 11.6386 8.05333 11.7932 8.05333 11.9478C8.05333 13.0793 8.92667 14 10 14C11.0733 14 11.9467 13.0793 11.9467 11.9478C11.9467 10.8163 11.0733 9.89558 10 9.89558Z"
+                      />
+                    </svg>
+                    <span class="controls__btn-descr"> Поделиться </span>
+                  </button>
+                </li>
+                <li class="controls__item">
+                  <button type="button" class="controls__btn">
+                    <svg
+                      width="10"
+                      height="12"
+                      viewBox="0 0 10 12"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M0.714286 10.6667C0.714286 11.4 1.35714 12 2.14286 12H7.85714C8.64286 12 9.28571 11.4 9.28571 10.6667V2.66667H0.714286V10.6667ZM2.14286 4H7.85714V10.6667H2.14286V4ZM7.5 0.666667L6.78571 0H3.21429L2.5 0.666667H0V2H10V0.666667H7.5Z"
+                      />
+                    </svg>
+
+                    <span class="controls__btn-descr"> Удалить </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
