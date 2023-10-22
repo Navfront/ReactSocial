@@ -1,0 +1,55 @@
+name: "Test and Deploy"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.0.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint source code
+        run: echo 'testing:)'
+
+      - name: Set -eu rule
+        run: set -eu
+
+      - name: Making dir ssh
+        run: mkdir "$HOME/.ssh"
+
+      - name: Writing ssh-key
+        run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
+
+      - name: Set privileges
+        run: chmod 600 "$HOME/.ssh/key"
+
+      - name: Set known-hosts
+        run: echo "${{ secrets.KNOWN_HOSTS }}" > "$HOME/.ssh/known_hosts"
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy docker files
+        run: cd docker && rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --progress --archive --compress --delete . andrey@${{secrets.HOST}}:/home/andrey/social/docker
+
+      - name: Rsync Deploy
+        run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --progress --archive --compress --delete . andrey@${{secrets.HOST}}:/home/andrey/social/docker
+
+      - name: Run compose
+        run: ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no andrey@${{secrets.HOST}} "cd /home/andrey/social && docker-compose -f /docker/docker-compose.yaml up -d"
