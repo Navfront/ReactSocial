@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  backend:
-    container_name: backend
+  social:
+    container_name: social
     build:
       context: '..'
       dockerfile: ./docker/Dockerfile
@@ -16,5 +16,5 @@ services:
     ports:
       - "3005:80"
     depends_on:
-      - backend
+      - social
 

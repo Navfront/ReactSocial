@@ -46,6 +46,9 @@ jobs:
         run: npm run build
 
       - name: Copy docker files
+        run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --progress --archive --compress --delete package.json andrey@${{secrets.HOST}}:/home/andrey/social/
+
+      - name: Copy docker files
         run: cd docker && rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --progress --archive --compress --delete . andrey@${{secrets.HOST}}:/home/andrey/social/docker
 
       - name: Rsync Deploy
