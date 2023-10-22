@@ -1,0 +1,47 @@
+[
+  {
+    "id": "check-color-brown",
+    "descr": "Коричневый",
+    "checked": ""
+  },
+  {
+    "id": "check-color-black",
+    "descr": "Черный",
+    "checked": ""
+  },
+  {
+    "id": "check-color-beige",
+    "descr": "Бежевый",
+    "checked": ""
+  },
+  {
+    "id": "check-color-gray",
+    "descr": "Серый",
+    "checked": ""
+  },
+  {
+    "id": "check-color-white",
+    "descr": "Белый",
+    "checked": ""
+  },
+  {
+    "id": "check-color-blue",
+    "descr": "Синий",
+    "checked": ""
+  },
+  {
+    "id": "check-color-orange",
+    "descr": "Оранжевый",
+    "checked": "checked"
+  },
+  {
+    "id": "check-color-yellow",
+    "descr": "Желтый",
+    "checked": ""
+  },
+  {
+    "id": "check-color-green",
+    "descr": "Зеленый",
+    "checked": ""
+  }
+]
