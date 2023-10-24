@@ -1,0 +1,142 @@
+.header {
+  padding-bottom: 20px;
+  display: grid;
+  align-items: center;
+
+  @media (min-width: $media-mid-min) {
+    grid-template-columns: 1fr auto;
+    gap: 30px 20px;
+  }
+
+  @media (min-width: $media-tab-min) {
+    padding-top: 40px;
+    padding-bottom: 0;
+    background-color: $color-f4;
+  }
+
+  @media (min-width: $media-desk-min) {
+    grid-template-columns: max-content 0.5fr auto;
+    gap: 30px;
+  }
+
+  &__wrapper {
+    width: 100%;
+
+    @media (min-width: $media-mid-min) {
+      grid-column: 1;
+    }
+
+    @media (min-width: $media-tab-min) {
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (min-width: $media-mid-min) {
+      margin-bottom: 0;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @media (min-width: $media-tab-min) {
+      font-size: 28px;
+      text-align: left;
+    }
+  }
+
+  &__select {
+    display: none;
+    justify-self: start;
+
+    @media (min-width: $media-desk-min) {
+      display: block;
+    }
+  }
+
+  &__top {
+    order: -1;
+    border-radius: 0px 0px 7px 7px;
+    margin-bottom: 38px;
+    padding: 14px 0;
+    background-color: $color-white;
+
+    @media (min-width: $media-mid-min) {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $media-tab-min) {
+      grid-column: initial;
+      order: initial;
+      background-color: transparent;
+    }
+  }
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+
+    @media (min-width: $media-desk-min) {
+      justify-content: end;
+      gap: 50px;
+    }
+  }
+
+  &__user-block {
+    @media (min-width: $media-tab-min) {
+      order: 3;
+    }
+  }
+
+  &__search {
+    @media (min-width: $media-tab-min) {
+      order: 2;
+    }
+  }
+
+  &__comments-btn {
+    @media (min-width: $media-tab-min) {
+      order: 1;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+    padding: 0 40px;
+
+    @media (min-width: $media-mid-min) {
+      grid-column: 2;
+    }
+
+    @media (min-width: $media-tab-min) {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: $media-desk-min) {
+      padding-left: 60px;
+      display: flex;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: $media-tab-min) {
+      display: flex;
+    }
+  }
+
+  &__select-nav {
+    @media (min-width: $media-tab-min) {
+      display: none;
+    }
+  }
+}

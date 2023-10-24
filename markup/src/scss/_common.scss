@@ -13,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0;
   height: 100%;
   min-width: 320px;
   font-family: "Roboto", "Arial", sans-serif;
@@ -21,7 +20,16 @@ body {
   font-size: 14px;
   line-height: 180%;
   color: $color-dark;
-  background-color: $color-white;
+  background-color: $color-f4;
+
+  @media (min-width: $media-tab-min) {
+    background-color: $color-white;
+  }
+
+  @media (min-width: $media-desk-min) {
+    padding: 97px 58px;
+    background-color: $color-f4;
+  }
 }
 
 main {
@@ -98,10 +106,27 @@ button {
   overflow: hidden;
 }
 
+.app-container {
+  display: contents;
+
+  @media (min-width: $media-desk-min) {
+    display: block;
+    border-radius: $border-rad;
+    margin: 0 auto;
+    max-width: 1600px;
+    background-color: $color-white;
+    box-shadow: $shadow-1;
+  }
+}
+
 .container {
   max-width: 1600px;
-  padding: 0 30px;
+  padding: 0 20px;
   margin: 0 auto;
+
+  @media (min-width: $media-tab-min) {
+    padding: 0 40px;
+  }
 }
 
 .list-reset {
