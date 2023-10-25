@@ -121,23 +121,49 @@
               <h3 class="post__title">
                 Реализация намеченных плановых заданий
               </h3>
+              <div class="post__image">
+                <img
+                  class="post__pic"
+                  src="img/post.jpg"
+                  alt="Что-то интересное.."
+                  width="320"
+                  height="178"
+                />
+              </div>
               <div class="post__meta post-meta">
                 <span class="post-meta__published"
-                  >опубликовано 4 часа назад</span
+                  ><span class="post-meta__published-pref">опубликовано</span> 4
+                  часа назад</span
                 >
                 <a class="post-meta__author author" href="#">
                   <img
-                    class="post__ava"
+                    class="author__ava"
                     src="img/ava.jpg"
                     height="20"
                     width="20"
+                    alt="Аватар пользователя"
                   />
                   Константин Кодов
                 </a>
               </div>
-              <div class="post__comments comments">
+              <button class="post__comments-btn post-comments-btn">
+                <svg
+                  class="post-comments-btn__icon"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M10.8 0H1.2C0.54 0 0 0.54 0 1.2V8.4C0 9.06 0.54 9.6 1.2 9.6H9.6L12 12V1.2C12 0.54 11.46 0 10.8 0ZM9.6 7.2H2.4V6H9.6V7.2ZM9.6 5.4H2.4V4.2H9.6V5.4ZM9.6 3.6H2.4V2.4H9.6V3.6Z"
+                  />
+                </svg>
+                <span class="post-comments-btn__count">14</span>
+              </button>
+              <!-- <div class="post__comments comments">
                 <button class="comments__show-btn" type="button">
                   Комментарий
+
                 </button>
                 <ul class="comments__list list-reset">
                   <li class="comments__item comment">
@@ -145,7 +171,7 @@
                       <span class="visually-hidden">Комментарий автора:</span>
                       <a class="comment__author author" href="#">
                         <img
-                          class="post__ava"
+                          class="author__ava"
                           src="img/ava.jpg"
                           height="20"
                           width="20"
@@ -169,7 +195,7 @@
                 <button class="comments__more-btn" type="button">
                   + ещё 3 ваших комментария
                 </button>
-              </div>
+              </div> -->
               <div class="post__likes likes">
                 <button class="likes__btn" type="button">
                   <span class="visually-hidden">Лайкнуть</span>
@@ -203,8 +229,9 @@
               <div class="post__controls controls">
                 <ul class="controls__list list-reset">
                   <li class="controls__item">
-                    <a type="button" class="controls__btn" href="#">
+                    <a class="controls__btn" href="#">
                       <svg
+                        class="controls__icon"
                         width="16"
                         height="10"
                         viewBox="0 0 16 10"
@@ -222,6 +249,7 @@
                   <li class="controls__item">
                     <button type="button" class="controls__btn">
                       <svg
+                        class="controls__icon"
                         width="12"
                         height="14"
                         viewBox="0 0 12 14"
@@ -237,6 +265,7 @@
                   <li class="controls__item">
                     <button type="button" class="controls__btn">
                       <svg
+                        class="controls__icon"
                         width="10"
                         height="12"
                         viewBox="0 0 10 12"
