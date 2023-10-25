@@ -1,0 +1,79 @@
+.controls {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+
+    @media (min-width: $media-tab-min) {
+      padding-left: 20px;
+    }
+
+    &::before {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $color-e4;
+      transform: translate(-50%, -50%);
+      transition: 0.15s ease-in opacity, 0.15s ease-in background-color;
+
+      @media (min-width: $media-tab-min) {
+        left: 0;
+        transform: translate(-5px, -50%);
+      }
+    }
+
+    &:focus-visible:not(:active)::before,
+    &:hover:not(:focus):not(:active)::before {
+      background-color: $color-tomato;
+    }
+
+    &:active::before {
+      opacity: 0.6;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    width: 10px;
+
+    @media (min-width: $media-tab-min) {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__btn-descr {
+    display: none;
+    max-width: 160px;
+    font-size: 14px;
+    color: $color-99;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (min-width: $media-tab-min) {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.post-meta {
+  display: flex;
+  font-size: 10px;
+  font-weight: 400;
+  color: $color-99;
+
+  @media (min-width: $media-tab-min) {
+    font-size: 14px;
+  }
+
+  &__published {
+    margin-right: 6px;
+    &-pref {
+      display: none;
+
+      @media (min-width: $media-tab-min) {
+        display: inline;
+      }
+    }
+  }
+
+  &__author {
+    order: -1;
+    margin-right: 7px;
+
+    @media (min-width: $media-tab-min) {
+      order: initial;
+    }
+  }
+}

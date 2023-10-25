@@ -1,0 +1,49 @@
+.options {
+  &__btn {
+    position: relative;
+    display: flex;
+    color: $color-d9;
+    transform: rotate(90deg);
+    transition: 0.15s ease-in opacity;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      display: block;
+      width: 31px;
+      height: 31px;
+      background-color: transparent;
+      transform: translate(-50%, -50%);
+      transition: 0.15s ease-in background-color, 0.15s ease-in opacity;
+    }
+
+    &:focus-visible:not(:active),
+    &:hover:not(:focus):not(:active) {
+      color: $color-grey-8d;
+    }
+
+    &:focus-visible:not(:active)::before,
+    &:hover:not(:focus):not(:active)::before {
+      background-color: $color-grey-1a;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    @media (min-width: $media-tab-min) {
+      transform: none;
+    }
+  }
+
+  &__icon {
+    transition: 0.15s ease-in color;
+  }
+
+  @media (min-width: $media-tab-min) {
+    transform: none;
+  }
+}

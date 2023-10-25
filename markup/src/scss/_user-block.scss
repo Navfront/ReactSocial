@@ -1,0 +1,64 @@
+.user-block {
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 0.15s ease-in opacity;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      display: block;
+      width: 30px;
+      height: 30px;
+      outline: 1px solid transparent;
+      outline-offset: 0px;
+      transition: 0.15s ease-in outline-color, 0.15s ease-in outline-offset;
+
+      @media (min-width: $media-tab-min) {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    &:focus-visible::before,
+    &:hover::before {
+      outline-color: $color-tomato;
+      outline-offset: 3px;
+    }
+
+    &:active {
+      outline-color: $color-tomato;
+      outline-offset: 3px;
+      opacity: 0.7;
+    }
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+
+    @media (min-width: $media-tab-min) {
+      margin-right: 13px;
+      height: 50px;
+      width: 50px;
+      min-width: 50px;
+    }
+  }
+
+  &__username {
+    display: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: $color-orange;
+
+    @media (min-width: $media-tab-min) {
+      display: inline;
+    }
+  }
+}

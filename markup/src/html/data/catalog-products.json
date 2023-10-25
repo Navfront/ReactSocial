@@ -1,0 +1,185 @@
+[
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван кожаный <span class='no-wrap'>“R&#8209;94”</span>",
+    "price": "94 990 руб",
+    "rating": "5,0",
+    "extraclass": "card--catalog ",
+    "img": "img/products/p1.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван апартековый <span class='no-wrap'>“T&#8209;75”</span>",
+    "price": "69 990 руб",
+    "rating": "4,9",
+    "extraclass": "card--catalog",
+    "img": "img/products/p2.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван тканевый <span class='no-wrap'>“D&#8209;31”</span>",
+    "price": "28 490 руб",
+    "rating": "4,8",
+    "extraclass": "card--catalog",
+    "img": "img/products/p3.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван велюровый <span class='no-wrap'>“Y&#8209;68”</span>",
+    "price": "22 990 руб",
+    "rating": "4,8",
+    "extraclass": "card--catalog",
+    "img": "img/products/p4.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван из шинила <span class='no-wrap'>“W&#8209;95”</span>",
+    "price": "22 990 руб",
+    "rating": "4,8",
+    "extraclass": "card--catalog",
+    "img": "img/products/p5.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван флоковый <span class='no-wrap'>“G&#8209;41”</span>",
+    "price": "17 990 руб",
+    "rating": "4,8",
+    "extraclass": "card--catalog",
+    "img": "img/products/p6.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван шиниловый <span class='no-wrap'>“V&#8209;43”</span>",
+    "price": "19 990 руб",
+    "rating": "4,7",
+    "extraclass": "card--catalog",
+    "img": "img/products/p7.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван велюровый <span class='no-wrap'>“S&#8209;99”</span>",
+    "price": "19 990 руб",
+    "rating": "4,7",
+    "extraclass": "card--catalog",
+    "img": "img/products/p8.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван из кожзама <span class='no-wrap'>“F&#8209;85”</span>",
+    "price": "26 990 руб",
+    "rating": "4,7",
+    "extraclass": "card--catalog",
+    "img": "img/products/p9.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван флоковый <span class='no-wrap'>“H&#8209;64”</span>",
+    "price": "25 990 руб",
+    "rating": "4,6",
+    "extraclass": "card--catalog",
+    "img": "img/products/p10.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван флоковый <span class='no-wrap'>“H&#8209;58”</span>",
+    "price": "23 990 руб",
+    "rating": "4,6",
+    "extraclass": "card--catalog",
+    "img": "img/products/p13.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван из кожзама <span class='no-wrap'>“R&#8209;43”</span>",
+    "price": "33 990 руб",
+    "rating": "4,6",
+    "extraclass": "card--catalog",
+    "img": "img/products/p16.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван из шинила <span class='no-wrap'>“С&#8209;42”</span>",
+    "price": "18 990 руб",
+    "rating": "4,6",
+    "extraclass": "card--catalog",
+    "img": "img/products/p11.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван велюровый <span class='no-wrap'>“U&#8209;58”</span>",
+    "price": "21 990 руб",
+    "rating": "4,6",
+    "extraclass": "card--catalog",
+    "img": "img/products/p14.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван флоковый <span class='no-wrap'>“F&#8209;41”</span>",
+    "price": "17 990 руб",
+    "rating": "4,5",
+    "extraclass": "card--catalog",
+    "img": "img/products/p17.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван велюровый <span class='no-wrap'>“R&#8209;85”</span>",
+    "price": "34 990 руб",
+    "rating": "4,5",
+    "extraclass": "card--catalog",
+    "img": "img/products/p12.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван велюровый <span class='no-wrap'>“S&#8209;44”</span>",
+    "price": "19 990 руб",
+    "rating": "4,5",
+    "extraclass": "card--catalog",
+    "img": "img/products/p15.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  },
+  {
+    "itemclass": "swiper-slide products__slide",
+    "title": "Диван из шинила <span class='no-wrap'>“С&#8209;80”</span>",
+    "price": "20 990 руб",
+    "rating": "4,4",
+    "extraclass": "card--catalog",
+    "img": "img/products/p18.png",
+    "imgwidth": "296",
+    "imgheight": "158"
+  }
+]

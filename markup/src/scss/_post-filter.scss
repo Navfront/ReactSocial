@@ -1,0 +1,10 @@
+.post-filter {
+  border: none;
+  color: $color-tomato;
+  background-color: transparent;
+  font-size: 20px;
+
+  &__option {
+    font-size: inherit;
+  }
+}

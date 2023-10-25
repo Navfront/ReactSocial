@@ -1,0 +1,26 @@
+.post-comments-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-c4;
+  transition: 0.15s ease-in color, 0.15s ease-in opacity;
+
+  &__icon {
+    margin-right: 3px;
+  }
+
+  &__count {
+    color: $color-c4;
+  }
+
+  &:focus-visible:not(:active),
+  &:hover:not(:focus):not(:active) {
+    color: $color-tomato;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

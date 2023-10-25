@@ -1,0 +1,68 @@
+[
+  {
+    "itemclass": "swiper-slide slider__slide specials__slide",
+    "cardclass": "card--special ",
+    "title": "Кресло велюровое <span class='no-wrap'>“X-24”</span>",
+    "discount": "9 000",
+    "newprice": "15 990 руб",
+    "oldprice": "24 990 руб",
+    "img": "img/specials/s1.png",
+    "imgwidth": "296",
+    "imgheight": "298"
+  },
+  {
+    "itemclass": "swiper-slide slider__slide slider__slide--big",
+    "cardclass": "card--special card--big card--decor1",
+    "title": "Диван тканевый <span class='no-wrap'>“Z-44”</span>",
+    "discount": "10 000",
+    "newprice": "22 990 руб",
+    "oldprice": "32 990 руб",
+    "img": "img/specials/s2.png",
+    "imgwidth": "624",
+    "imgheight": "298"
+  },
+  {
+    "itemclass": "swiper-slide slider__slide",
+    "cardclass": "card--special ",
+    "title": "Будильник <span class='no-wrap'>“Quartz-23”</span>",
+    "discount": "600",
+    "newprice": "1 290 руб",
+    "oldprice": "1 890 руб",
+    "img": "img/specials/s3.png",
+    "imgwidth": "296",
+    "imgheight": "298"
+  },
+  {
+    "itemclass": "swiper-slide slider__slide",
+    "cardclass": "card--special ",
+    "title": "Мини-скульптура <span class='no-wrap'>“Oh my deer”</span>",
+    "discount": "300",
+    "newprice": "690 руб",
+    "oldprice": "990 руб",
+    "img": "img/specials/s4.png",
+    "imgwidth": "296",
+    "imgheight": "298"
+  },
+  {
+    "itemclass": "swiper-slide slider__slide slider__slide--big",
+    "cardclass": "card--special card--big card--decor2",
+    "title": "Диван вел-флок <span class='no-wrap'>“Z-85”</span>",
+    "discount": "10 000",
+    "newprice": "22 990 руб",
+    "oldprice": "32 990 руб",
+    "img": "img/specials/s5.png",
+    "imgwidth": "624",
+    "imgheight": "298"
+  },
+  {
+    "itemclass": "swiper-slide slider__slide",
+    "cardclass": "card--special ",
+    "title": "Термометр + гидрометр <span class='no-wrap'>“H-18”</span>",
+    "discount": "700",
+    "newprice": "1 390 руб",
+    "oldprice": "2 090 руб",
+    "img": "img/specials/s6.png",
+    "imgwidth": "296",
+    "imgheight": "298"
+  }
+]
