@@ -1,8 +1,8 @@
 {
   "lang": "ru-RU",
-  "description": "react fsd project",
+  "description": "skillbox project",
   "name": "React social",
-  "short_name": "hpass",
+  "short_name": "rsocial",
   "icons": [
     {
       "src": "img/favicon/android-chrome-192x192.png",

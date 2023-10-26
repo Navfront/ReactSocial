@@ -38,7 +38,13 @@ const filename = (ext: string): string =>
 
 const plugins: WebpackPluginInstance[] = [
   new CopyPlugin({
-    patterns: [{ from: path.resolve(SRC_DIR, "assets/images"), to: DIST_DIR }],
+    patterns: [
+      {
+        from: path.resolve(SRC_DIR, "assets/public"),
+        to: DIST_DIR,
+        noErrorOnMissing: true,
+      },
+    ],
   }),
   new DefinePlugin({
     NO_SSR: process.env.NO_SSR === "true",

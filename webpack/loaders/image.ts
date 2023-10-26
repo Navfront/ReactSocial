@@ -3,7 +3,7 @@ import { RuleSetRule } from "webpack";
 import { IS_DEV } from "../constants";
 import { TLoader } from "../types";
 
-const imageRegex: RegExp = /\.(png|jpg|jpeg|gif)$/;
+const imageRegex: RegExp = /\.(png|jpg|jpeg|gif|webp)$/;
 
 const universalLoader: RuleSetRule = {
   test: imageRegex,

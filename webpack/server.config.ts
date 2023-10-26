@@ -26,8 +26,9 @@ const serverConfig: Configuration = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(SRC_DIR, "assets/images"),
+          from: path.resolve(SRC_DIR, "assets/public"),
           to: DIST_DIR,
+          noErrorOnMissing: true,
         },
       ],
     }),
