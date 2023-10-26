@@ -1,5 +1,6 @@
 # dependencies
 node_modules
+markup/node_modules
 /.pnp
 .pnp.js
 .idea
