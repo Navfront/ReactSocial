@@ -1,5 +1,0 @@
-[
-  { "id": "check-dis-gt5000", "descr": "Более 5 000", "checked": "" },
-  { "id": "check-dis-lt5000", "descr": "Менее 5 000", "checked": "" },
-  { "id": "check-no-matter", "descr": "Не важно", "checked": "checked" }
-]
