@@ -1,0 +1,21 @@
+.dropdown {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    overflow: hidden;
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: 0.15s ease-in transform, 0.15s ease-in opacity;
+    pointer-events: none;
+  }
+
+  &--open &__content {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: all;
+  }
+}
