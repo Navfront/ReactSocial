@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren, ReactElement } from "react";
 
 import cn from "classnames";
 
@@ -6,8 +6,9 @@ import styles from "./style.module.scss";
 import { useDropdown } from "../lib/hooks/use-dropdown";
 
 interface IDropdown extends PropsWithChildren {
-  button: ReactNode;
+  button: ReactElement;
   className?: string;
+  contentClassName?: string;
   isOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
@@ -20,6 +21,7 @@ export const Dropdown: FC<IDropdown> = ({
   isOpen,
   onOpen,
   onClose,
+  contentClassName,
 }) => {
   const { isDropdownOpen, handleOpen } = useDropdown(isOpen, onOpen, onClose);
 
@@ -30,14 +32,7 @@ export const Dropdown: FC<IDropdown> = ({
       })}
     >
       <div onClick={() => handleOpen()}>{button}</div>
-
-      <div
-        className={cn(styles.dropdown__content)}
-        onClick={() => {
-          handleOpen("CLOSE");
-          console.log("click");
-        }}
-      >
+      <div className={cn(styles.dropdown__content, contentClassName)}>
         {children}
       </div>
     </div>

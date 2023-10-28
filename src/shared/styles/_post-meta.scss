@@ -12,6 +12,7 @@
     margin-right: 6px;
     &-pref {
       display: none;
+      margin-right: 3px;
 
       @media (min-width: $media-tab-min) {
         display: inline;

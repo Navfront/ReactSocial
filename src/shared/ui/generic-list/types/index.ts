@@ -1,4 +1,4 @@
-import { ReactComponentElement } from "react";
+import { ReactComponentElement, ReactNode } from "react";
 
 export type GenericListItemType = "div" | "li";
 
@@ -9,7 +9,7 @@ export type RenderComponentType = <I extends IGenericListItem>(
 export interface IGenericListItem {
   As?: string;
   id?: string;
-  renderComponent?: RenderComponentType;
+  render?: RenderComponentType;
   onClick?: () => void;
   text?: string;
 }
@@ -18,10 +18,5 @@ export interface IGenericListOptions {
   className?: string[];
   type?: "ul" | "ol" | "dl";
   itemType?: GenericListItemType;
-}
-
-export interface IGenericListProps {
-  items: IGenericListItem[];
-  opts?: IGenericListOptions;
-  className?: string;
+  renderAs?: ReactNode;
 }

@@ -2,11 +2,17 @@ import { FC } from "react";
 
 import { DEFAULT_LIST_TYPE } from "../config";
 import { useGenericMap } from "../lib/hooks/use-mapper";
-import { IGenericListOptions, IGenericListProps } from "../types";
+import { IGenericListItem, IGenericListOptions } from "../types";
+
+export interface IGenericListProps {
+  items: IGenericListItem[];
+  opts?: IGenericListOptions;
+  className?: string;
+}
 
 export const GenericList: FC<IGenericListProps> = ({
   items,
-  opts = {} as IGenericListOptions,
+  opts = {},
   className,
 }) => {
   const { type = DEFAULT_LIST_TYPE } = opts;

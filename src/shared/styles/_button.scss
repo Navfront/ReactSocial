@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+
+  &--option {
+    padding: 11px 0 12px;
+    width: 100%;
+    font-size: 12px;
+    color: $color-99;
+
+    @media (min-width: $media-tab-min) {
+      font-size: 14px;
+    }
+
+    & svg {
+      margin-right: 6px;
+    }
+  }
+}

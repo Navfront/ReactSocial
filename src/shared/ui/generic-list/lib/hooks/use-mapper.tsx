@@ -14,7 +14,7 @@ export const useGenericMap = (
   items.map((item) => {
     const applyId = assoc("id", item.id || useId());
     const itemWithID = applyId(item);
-    if (item.renderComponent) return item.renderComponent(itemWithID);
+    if (item.render) return item.render(itemWithID);
     const applyElementType = assoc("As", item.As || itemType);
     const {
       As: Item,
