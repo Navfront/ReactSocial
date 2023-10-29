@@ -1,0 +1,19 @@
+.interactive-1 {
+  transition: 0.15s ease-in color, 0.15s ease-in opacity;
+
+  &:focus-visible:not(:active),
+  &:hover:not(:focus):not(:active) {
+    color: $color-tomato;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--warn {
+    &:focus-visible:not(:active),
+    &:hover:not(:focus):not(:active) {
+      color: $color-pink;
+    }
+  }
+}

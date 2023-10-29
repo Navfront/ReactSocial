@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 7px;
-  overflow: hidden;
   background-color: $color-white;
 
   @media (min-width: $media-tab-min) {
