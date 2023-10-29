@@ -52,4 +52,4 @@ jobs:
         run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --progress --archive --compress --delete . andrey@${{secrets.HOST}}:/home/andrey/social/dist
 
       - name: Run compose
-        run: ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no andrey@${{secrets.HOST}} "cd /home/andrey/social && docker-compose -f ./docker/docker-compose.yaml up -d"
+        run: ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no andrey@${{secrets.HOST}} "cd /home/andrey/social && docker-compose -f ./docker/docker-compose.yaml up -d --force-recreate"
