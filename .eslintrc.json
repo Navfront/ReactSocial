@@ -28,7 +28,7 @@
     "no-unused-vars": "off",
     "no-useless-catch": "off",
     "import/named": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/order": [
       "error",
       {
