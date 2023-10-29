@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { FilterPosts } from "@src/features/post/filter-posts/ui/filter-posts";
+
 export const Header: FC = () => {
   return (
     <header className="header">
@@ -86,26 +88,7 @@ export const Header: FC = () => {
             </li>
           </ul>
         </nav>
-        <label className="visually-hidden" htmlFor="select-nav">
-          Какие посты смотреть
-        </label>
-        <select className="header__select-nav select-nav" id="select-nav">
-          <option className="select-nav__option" value="my-posts">
-            Просмотренное
-          </option>
-          <option className="select-nav__option" value="saved">
-            Сохранённое
-          </option>
-          <option className="select-nav__option" value="seen">
-            Просмотренное
-          </option>
-          <option className="select-nav__option" value="commented">
-            Покомментированное
-          </option>
-          <option className="select-nav__close" value="close">
-            Закрыть
-          </option>
-        </select>
+        <FilterPosts />
       </div>
     </header>
   );

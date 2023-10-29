@@ -24,6 +24,7 @@ export const Dropdown: FC<IDropdown> = ({
   contentClassName,
 }) => {
   const { isDropdownOpen, handleOpen } = useDropdown(isOpen, onOpen, onClose);
+  console.log(isOpen);
 
   return (
     <div

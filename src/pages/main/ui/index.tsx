@@ -7,6 +7,7 @@ export const MainPage: FC = () => {
   return (
     <>
       <Header />
+
       <main className="main">
         <Posts sectionTitle="Лучшие посты" posts={[]} />
       </main>
