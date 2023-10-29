@@ -10,6 +10,7 @@ services:
       - 3000
     environment:
       NODE_ENV: production
+    restart: always
 
   nginx:
     build: ./nginx
@@ -17,3 +18,4 @@ services:
       - "3005:80"
     depends_on:
       - social
+    restart: always
