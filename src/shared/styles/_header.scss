@@ -110,7 +110,6 @@
 
   &__bottom {
     grid-column: 1 / -1;
-    padding: 0 40px;
 
     @media (min-width: $media-mid-min) {
       grid-column: 2;

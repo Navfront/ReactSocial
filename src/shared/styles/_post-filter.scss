@@ -1,10 +1,61 @@
 .post-filter {
+  position: relative;
+  z-index: 3;
   border: none;
   color: $color-tomato;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 12px;
+
+  &__wrapper {
+    top: 100%;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &__btn {
+    position: relative;
+    border-radius: $border-rad;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $color-tomato;
+    background-color: $color-white;
+
+    svg:first-of-type {
+      margin-right: 6px;
+    }
+
+    svg:last-of-type {
+      margin-left: auto;
+    }
+
+    &--active {
+      border-radius: 7px 7px 0 0;
+    }
+  }
+
+  &__btn-text {
+    padding-left: 20px;
+  }
+
+  &__item:first-child &__option {
+    border-top: 1px solid $color-ec;
+  }
 
   &__option {
-    font-size: inherit;
+    width: 100%;
+    color: $color-99;
+  }
+
+  &__btn,
+  &__option {
+    padding: 11px 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 20px;
+    margin-right: 3px;
+    color: $color-tomato;
   }
 }

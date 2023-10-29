@@ -4,3 +4,7 @@ export { IconSave } from "./ui/save";
 export { IconShare } from "./ui/share";
 export { IconStop } from "./ui/stop";
 export { IconWarn } from "./ui/warn";
+export { IconEye } from "./ui/eye";
+export { IconPen } from "./ui/pen";
+export { IconRocket } from "./ui/rocket";
+export { IconUp } from "./ui/up";
