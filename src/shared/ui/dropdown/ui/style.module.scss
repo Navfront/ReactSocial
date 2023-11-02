@@ -21,3 +21,15 @@
     pointer-events: all;
   }
 }
+
+.select-dropdown-btn {
+  & svg:last-child {
+    transition: 0.15s ease-in transform;
+  }
+
+  &--active {
+    svg:last-child {
+      transform: rotate(180deg);
+    }
+  }
+}

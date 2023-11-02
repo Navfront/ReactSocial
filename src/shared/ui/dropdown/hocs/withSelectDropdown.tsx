@@ -1,13 +1,13 @@
 /* eslint-disable react/display-name */
 
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect } from "react";
 
-import cn from "classnames";
-
-import { IconUp } from "../../icons";
-import { useSelectDropDown } from "../lib/hooks/use-select-dropdown";
-import { IComponentItem, isStringArray } from "../lib/types";
+import { DEFAULT_CLOSE_BTN_TEXT } from "../lib/config";
+import { useDropdownReducer } from "../lib/hooks/use-dropdown-reducer";
+import { DispatchTypes, IComponentItem } from "../lib/types";
 import { Dropdown } from "../ui/dropdown";
+import { DropdownSelectBtn } from "../ui/dropdown-select-btn";
+import { DropdownSelectList } from "../ui/dropdown-select-list";
 
 interface IExtraProps {
   className?: string;
@@ -16,16 +16,21 @@ interface IExtraProps {
   itemClassName?: string;
   listClassName?: string;
   contentWrapperClassName?: string;
+  closeBtnClassName?: string;
+  closeBtnText?: string;
   iconElement?: ReactElement;
+  directionIconElement?: ReactElement;
 }
 
 export const withSelectDropdown = (
-  items: string[] | IComponentItem[] = ["Первое"]
+  items: string[] | IComponentItem[] = [],
+  defaultChoice: string
 ) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { state, dispatch } = useDropdownReducer();
 
-  const { currentOption, mapper, stringsFilter, componentsFilter } =
-    useSelectDropDown(items, isOpen, setIsOpen);
+  useEffect(() => {
+    dispatch({ type: DispatchTypes.SET_CURRENT, payload: defaultChoice });
+  }, []);
 
   return ({
     className = "",
@@ -34,51 +39,35 @@ export const withSelectDropdown = (
     itemClassName = "",
     listClassName = "",
     contentWrapperClassName = "",
-    iconElement,
+    closeBtnClassName = "",
+    closeBtnText = DEFAULT_CLOSE_BTN_TEXT,
+    directionIconElement,
   }: IExtraProps) => (
     <Dropdown
       className={className}
-      contentClassName={"options__wrapper " + contentWrapperClassName}
-      isOpen={isOpen}
-      onOpen={() => setIsOpen(true)}
-      onClose={() => setIsOpen(false)}
+      contentClassName={contentWrapperClassName}
+      isOpen={state.isOpen}
       button={
-        <button
-          className={cn(mainBtnClassName, {
-            "post-filter__btn--active": isOpen,
-          })}
-          type="button"
-        >
-          {iconElement}
-          {currentOption}
-          <IconUp
-            className={cn("options__icon-direction", {
-              "options__icon-direction--rotate": isOpen,
-            })}
-          />
-        </button>
+        <DropdownSelectBtn
+          state={state}
+          dispatch={dispatch}
+          currentSelect={defaultChoice}
+          mainBtnClassName={mainBtnClassName}
+          items={items}
+          directionIcon={directionIconElement}
+        />
       }
     >
-      <ul className={cn("list-reset", "options__content", listClassName)}>
-        {isStringArray(items)
-          ? items
-              .filter(stringsFilter)
-              .map(mapper({ btnClassName, itemClassName }))
-          : items
-              .filter(componentsFilter)
-              .map(mapper({ btnClassName, itemClassName }))}
-        <li className={cn("options__item", itemClassName)}>
-          <button
-            className="options__close interactive-1 interactive-1--warn"
-            onClick={() => {
-              console.log("closeeee");
-              setIsOpen(false);
-            }}
-          >
-            Закрыть
-          </button>
-        </li>
-      </ul>
+      <DropdownSelectList
+        items={items}
+        closeBtnText={closeBtnText}
+        itemClassName={itemClassName}
+        btnClassName={btnClassName}
+        listClassName={listClassName}
+        closeBtnClassName={closeBtnClassName}
+        dispatch={dispatch}
+        state={state}
+      />
     </Dropdown>
   );
 };
