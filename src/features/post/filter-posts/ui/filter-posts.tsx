@@ -10,9 +10,11 @@ export const FilterPosts: FC<FilterPostsProps> = () => {
   return (
     <div className="options post-filter">
       <PostFilter
+        defaultChoice="Просмотренное"
         items={[
           {
             text: "Просмотренное",
+            icon: <IconEye />,
             render: (onClick) => (
               <Button
                 className="post-filter__option interactive-1"
@@ -25,6 +27,7 @@ export const FilterPosts: FC<FilterPostsProps> = () => {
           },
           {
             text: "Сохранённое",
+            icon: <IconSave />,
             render: (onClick) => (
               <Button
                 className="post-filter__option interactive-1"
@@ -37,6 +40,7 @@ export const FilterPosts: FC<FilterPostsProps> = () => {
           },
           {
             text: "Мои посты",
+            icon: <IconPen />,
             render: (onClick) => (
               <Button
                 className="post-filter__option interactive-1"
@@ -49,6 +53,7 @@ export const FilterPosts: FC<FilterPostsProps> = () => {
           },
           {
             text: "Прокомментированное",
+            icon: <IconComment />,
             render: (onClick) => (
               <Button
                 className="post-filter__option interactive-1"

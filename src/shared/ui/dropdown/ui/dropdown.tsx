@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { FC, PropsWithChildren, ReactElement, useEffect } from "react";
 
 import cn from "classnames";
 
@@ -24,7 +24,7 @@ export const Dropdown: FC<IDropdown> = ({
   contentClassName,
 }) => {
   const { isDropdownOpen, handleOpen } = useDropdown(isOpen, onOpen, onClose);
-  console.log(isOpen);
+  useEffect(() => {}, [isOpen]);
 
   return (
     <div
