@@ -16,6 +16,7 @@ import styles from "../ui/style.module.scss";
 
 interface IExtraProps {
   className?: string;
+  activeClassName?: string;
   mainBtnClassName?: string;
   btnClassName?: string;
   itemClassName?: string;
@@ -41,6 +42,7 @@ export const withSelectDropdown = (
 
   return ({
     className = "",
+    activeClassName = "",
     mainBtnClassName = "",
     btnClassName = "",
     itemClassName = "",
@@ -53,6 +55,7 @@ export const withSelectDropdown = (
   }: IExtraProps) => (
     <Dropdown
       className={className}
+      activeClassName={activeClassName}
       contentClassName={contentWrapperClassName}
       isOpen={state.isOpen}
       onOpen={() =>

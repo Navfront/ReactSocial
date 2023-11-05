@@ -39,6 +39,7 @@ export const PageNavigation: FC<PageNavigationProps> = ({
 
       <PageNavigationSelect
         className="header__select-nav post-filter"
+        activeClassName="post-filter--active"
         mainBtnClassName="post-filter__btn"
         contentWrapperClassName="options__wrapper post-filter__wrapper"
         itemClassName="post-filter__item options__item"

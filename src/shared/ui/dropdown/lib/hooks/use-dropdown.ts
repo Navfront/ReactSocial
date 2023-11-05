@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 const noop = () => {};
 
@@ -10,9 +10,26 @@ enum DropdownState {
 export const useDropdown = (
   isOpenProp = false,
   onOpenCb = noop,
-  oncloseCb = noop
+  oncloseCb = noop,
+  dropdownRef: RefObject<HTMLElement>
 ) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(isOpenProp);
+
+  const otherClickHandler = () => {
+    if (!dropdownRef.current) {
+      setIsDropdownOpen(false);
+      oncloseCb();
+      window.removeEventListener("click", otherClickHandler);
+    }
+  };
+
+  const escKeyHandler = (event: KeyboardEvent) => {
+    if (event.key.includes("Esc")) {
+      setIsDropdownOpen(false);
+      oncloseCb();
+      window.removeEventListener("keydown", escKeyHandler);
+    }
+  };
 
   useEffect(() => {
     setIsDropdownOpen(isOpenProp);
@@ -20,8 +37,12 @@ export const useDropdown = (
 
   useEffect(() => {
     if (isDropdownOpen) {
+      window.addEventListener("click", otherClickHandler);
+      window.addEventListener("keydown", escKeyHandler);
       onOpenCb();
     } else {
+      window.removeEventListener("click", otherClickHandler);
+      window.removeEventListener("keydown", escKeyHandler);
       oncloseCb();
     }
   }, [isDropdownOpen]);

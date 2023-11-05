@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { createRef, FC, PropsWithChildren, ReactElement } from "react";
 
 import cn from "classnames";
 
@@ -9,6 +9,7 @@ interface IDropdown extends PropsWithChildren {
   button: ReactElement;
   className?: string;
   contentClassName?: string;
+  activeClassName?: string;
   isOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
@@ -17,18 +18,27 @@ interface IDropdown extends PropsWithChildren {
 export const Dropdown: FC<IDropdown> = ({
   children,
   className,
+  activeClassName = "",
   button,
   isOpen,
   onOpen,
   onClose,
   contentClassName,
 }) => {
-  const { isDropdownOpen, handleOpen } = useDropdown(isOpen, onOpen, onClose);
+  const dropdownRef = createRef<HTMLDivElement>();
+  const { isDropdownOpen, handleOpen } = useDropdown(
+    isOpen,
+    onOpen,
+    onClose,
+    dropdownRef
+  );
 
   return (
     <div
+      ref={dropdownRef}
       className={cn(styles.dropdown, className, {
         [styles["dropdown--open"]]: isDropdownOpen,
+        [activeClassName]: isDropdownOpen,
       })}
     >
       <div

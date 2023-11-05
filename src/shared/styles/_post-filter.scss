@@ -28,10 +28,10 @@
     svg:last-of-type {
       margin-left: auto;
     }
+  }
 
-    &--active {
-      border-radius: 7px 7px 0 0;
-    }
+  &--active &__btn {
+    border-radius: 7px 7px 0 0;
   }
 
   &__btn-text {
