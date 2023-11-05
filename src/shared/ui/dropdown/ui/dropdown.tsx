@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement, useEffect } from "react";
+import { FC, PropsWithChildren, ReactElement } from "react";
 
 import cn from "classnames";
 
