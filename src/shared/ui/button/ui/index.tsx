@@ -1,6 +1,7 @@
 import {
   forwardRef,
   ForwardRefRenderFunction,
+  LegacyRef,
   PropsWithChildren,
   ReactNode,
   SyntheticEvent,
@@ -27,9 +28,13 @@ interface IButtonProps extends PropsWithChildren {
   icon?: ReactNode;
   iconPosition?: keyof typeof IconPositions;
   type?: keyof typeof BtnTypes;
+  href?: string;
 }
 
-const Button: ForwardRefRenderFunction<HTMLButtonElement, IButtonProps> = (
+const Button: ForwardRefRenderFunction<
+  HTMLButtonElement | HTMLAnchorElement,
+  IButtonProps
+> = (
   {
     className = "",
     children,
@@ -37,13 +42,14 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, IButtonProps> = (
     icon,
     type = "button",
     onClick,
+    href,
   },
   ref
 ) => {
-  return (
+  return href ? (
     <button
       className={cn(className, styles.btn)}
-      ref={ref}
+      ref={ref as LegacyRef<HTMLButtonElement>}
       onClick={onClick}
       type={type}
     >
@@ -51,6 +57,17 @@ const Button: ForwardRefRenderFunction<HTMLButtonElement, IButtonProps> = (
       {children}
       {icon && iconPosition === "RIGHT" ? icon : ""}
     </button>
+  ) : (
+    <a
+      href={href}
+      className={cn(className, styles.btn)}
+      ref={ref as LegacyRef<HTMLAnchorElement>}
+      onClick={onClick}
+    >
+      {icon && iconPosition === "LEFT" ? icon : ""}
+      {children}
+      {icon && iconPosition === "RIGHT" ? icon : ""}
+    </a>
   );
 };
 

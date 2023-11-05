@@ -1,7 +1,7 @@
 import { Dispatch, ReactElement } from "react";
 
 export interface IComponentItem {
-  render: (onClick: () => void) => ReactElement;
+  render: (onClick: () => void, as?: "button" | "a") => ReactElement;
   text: string;
   icon?: ReactElement;
 }

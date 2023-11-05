@@ -43,6 +43,10 @@
     width: 30px;
     min-width: 30px;
 
+    @media (min-width: $media-mid-min) {
+      margin-right: 13px;
+    }
+
     @media (min-width: $media-tab-min) {
       margin-right: 13px;
       height: 50px;
@@ -53,12 +57,16 @@
 
   &__username {
     display: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: $color-orange;
 
-    @media (min-width: $media-tab-min) {
+    @media (min-width: $media-mid-min) {
       display: inline;
+    }
+
+    @media (min-width: $media-tab-min) {
+      font-size: 20px;
     }
   }
 }
