@@ -1,5 +1,6 @@
 /* eslint-disable react/display-name */
 
+import { ANIMATION_DELAY } from "../config";
 import {
   IComponentItem,
   MapperType,
@@ -32,16 +33,23 @@ export const useSelectDropDown = (
               className={btnClassName}
               type="button"
               onClick={() => {
-                dispatch({ type: DispatchTypes.CLOSE });
-                dispatch({ type: DispatchTypes.SET_CURRENT, payload: item });
+                setTimeout(() => {
+                  dispatch({ type: DispatchTypes.CLOSE });
+                  dispatch({ type: DispatchTypes.SET_CURRENT, payload: item });
+                }, ANIMATION_DELAY);
               }}
             >
               {item}
             </button>
           ) : (
             item.render(() => {
-              dispatch({ type: DispatchTypes.CLOSE });
-              dispatch({ type: DispatchTypes.SET_CURRENT, payload: item.text });
+              setTimeout(() => {
+                dispatch({ type: DispatchTypes.CLOSE });
+                dispatch({
+                  type: DispatchTypes.SET_CURRENT,
+                  payload: item.text,
+                });
+              }, ANIMATION_DELAY);
             })
           )}
         </li>

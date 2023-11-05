@@ -9,6 +9,7 @@ export type RenderComponentType = <I extends IGenericListItem>(
 export interface IGenericListItem {
   As?: string;
   id?: string;
+  className?: string;
   render?: RenderComponentType;
   onClick?: () => void;
   text?: string;
