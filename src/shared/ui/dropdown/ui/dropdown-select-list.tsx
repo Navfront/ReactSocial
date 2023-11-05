@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+import { ANIMATION_DELAY } from "../lib/config";
 import { useSelectDropDown } from "../lib/hooks/use-select-dropdown";
 import {
   DispatchTypes,
@@ -48,7 +49,11 @@ export const DropdownSelectList: FC<DropdownSelectListProps> = ({
         <button
           className={closeBtnClassName}
           onClick={() => {
-            if (dispatch) dispatch({ type: DispatchTypes.CLOSE });
+            if (dispatch) {
+              setTimeout(() => {
+                dispatch({ type: DispatchTypes.CLOSE });
+              }, ANIMATION_DELAY);
+            }
           }}
         >
           {closeBtnText}

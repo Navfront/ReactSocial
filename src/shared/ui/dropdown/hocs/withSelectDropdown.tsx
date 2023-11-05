@@ -1,13 +1,18 @@
 /* eslint-disable react/display-name */
 
-import { ReactElement, useEffect } from "react";
+import { ReactElement, useEffect, createRef } from "react";
 
-import { DEFAULT_CLOSE_BTN_TEXT } from "../lib/config";
+import { setClassToRef } from "./../../../lib/react/set-class-to-ref";
+import {
+  DEFAULT_CLOSE_BTN_TEXT,
+  DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS,
+} from "../lib/config";
 import { useDropdownReducer } from "../lib/hooks/use-dropdown-reducer";
 import { DispatchTypes, IComponentItem } from "../lib/types";
 import { Dropdown } from "../ui/dropdown";
 import { DropdownSelectBtn } from "../ui/dropdown-select-btn";
 import { DropdownSelectList } from "../ui/dropdown-select-list";
+import styles from "../ui/style.module.scss";
 
 interface IExtraProps {
   className?: string;
@@ -32,6 +37,8 @@ export const withSelectDropdown = (
     dispatch({ type: DispatchTypes.SET_CURRENT, payload: defaultChoice });
   }, []);
 
+  const btnRef = createRef<HTMLButtonElement>();
+
   return ({
     className = "",
     mainBtnClassName = "",
@@ -41,19 +48,32 @@ export const withSelectDropdown = (
     contentWrapperClassName = "",
     closeBtnClassName = "",
     closeBtnText = DEFAULT_CLOSE_BTN_TEXT,
+    iconElement,
     directionIconElement,
   }: IExtraProps) => (
     <Dropdown
       className={className}
       contentClassName={contentWrapperClassName}
       isOpen={state.isOpen}
+      onOpen={() =>
+        setClassToRef(btnRef, styles[DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS], "add")
+      }
+      onClose={() =>
+        setClassToRef(
+          btnRef,
+          styles[DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS],
+          "remove"
+        )
+      }
       button={
         <DropdownSelectBtn
+          btnRef={btnRef}
           state={state}
           dispatch={dispatch}
           currentSelect={defaultChoice}
           mainBtnClassName={mainBtnClassName}
           items={items}
+          iconElement={iconElement}
           directionIcon={directionIconElement}
         />
       }

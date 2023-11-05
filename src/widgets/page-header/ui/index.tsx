@@ -1,8 +1,12 @@
 import { FC } from "react";
 
-import { FilterPosts } from "@src/features/post/filter-posts/ui/filter-posts";
+import { PageNavigation } from "@entities/navigation/page-navigation";
+
+import { useFeatureItems } from "../hooks/use-feature-items";
 
 export const Header: FC = () => {
+  const { selects, links, defaultChoice } = useFeatureItems();
+
   return (
     <header className="header">
       <div className="container header__wrapper">
@@ -64,31 +68,11 @@ export const Header: FC = () => {
       </div>
 
       <div className="header__bottom">
-        <nav className="header__nav header-nav">
-          <ul className="header-nav__list list-reset">
-            <li className="header-nav__item">
-              <a className="header-nav__link" href="#">
-                Просмотренное
-              </a>
-            </li>
-            <li className="header-nav__item">
-              <a className="header-nav__link" href="#">
-                Сохранённое
-              </a>
-            </li>
-            <li className="header-nav__item">
-              <a className="header-nav__link" href="#">
-                Мои посты
-              </a>
-            </li>
-            <li className="header-nav__item">
-              <a className="header-nav__link" href="#">
-                Прокомментированное
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <FilterPosts />
+        <PageNavigation
+          defaultChoice={defaultChoice}
+          selects={selects}
+          links={links}
+        />
       </div>
     </header>
   );

@@ -21,11 +21,12 @@ export const useGenericMap = (
       id,
       onClick = noop,
       text = "",
+      className = "",
     } = applyElementType(itemWithID);
     const As = Item as any;
 
     return (
-      <As key={id} onClick={onClick}>
+      <As key={id} onClick={onClick} className={className}>
         {text}
       </As>
     );
