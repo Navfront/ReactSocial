@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { FC, PropsWithChildren, ReactElement, useEffect } from "react";
 
 import cn from "classnames";
 
@@ -24,7 +24,6 @@ export const Dropdown: FC<IDropdown> = ({
   contentClassName,
 }) => {
   const { isDropdownOpen, handleOpen } = useDropdown(isOpen, onOpen, onClose);
-  console.log(isOpen);
 
   return (
     <div
@@ -32,8 +31,19 @@ export const Dropdown: FC<IDropdown> = ({
         [styles["dropdown--open"]]: isDropdownOpen,
       })}
     >
-      <div onClick={() => handleOpen()}>{button}</div>
-      <div className={cn(styles.dropdown__content, contentClassName)}>
+      <div
+        onClick={() => {
+          handleOpen();
+        }}
+      >
+        {button}
+      </div>
+      <div
+        onClick={() => {
+          handleOpen("CLOSE");
+        }}
+        className={cn(styles.dropdown__content, contentClassName)}
+      >
         {children}
       </div>
     </div>

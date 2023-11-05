@@ -1,0 +1,10 @@
+export const DEFAULT_DROPDOWN_BTN_CLASS = "select-dropdown-btn";
+
+const DEFAULT_ACTIVE_CLASS_POSTFIX = "--active";
+
+export const DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS =
+  DEFAULT_DROPDOWN_BTN_CLASS + DEFAULT_ACTIVE_CLASS_POSTFIX;
+
+export const DEFAULT_CLOSE_BTN_TEXT = "Закрыть";
+
+export const ANIMATION_DELAY = 150;

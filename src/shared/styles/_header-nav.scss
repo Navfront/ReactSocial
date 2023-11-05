@@ -3,12 +3,16 @@
 
   &__list {
     border-bottom: 2px solid $color-d9;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
     display: flex;
   }
 
   &__item:not(:last-child) {
     margin-right: 60px;
+  }
+
+  &__item--no-icon svg {
+    display: none;
   }
 
   &__link {

@@ -1,19 +1,27 @@
 /* eslint-disable react/display-name */
-import { useState } from "react";
 
-import { useFilters } from "./use-filters";
-import { isStringArray, IComponentItem, MapperType, isString } from "../types";
+import { ANIMATION_DELAY } from "../config";
+import {
+  IComponentItem,
+  MapperType,
+  isString,
+  FilterType,
+  StateType,
+  DropdownDispatch,
+  DispatchTypes,
+} from "../types";
 
 export const useSelectDropDown = (
-  items: string[] | IComponentItem[],
-  isOpen: boolean,
-  setIsOpen: (value: boolean) => void
+  dispatch: DropdownDispatch,
+  state: StateType
 ) => {
-  const [currentOption, setCurrentOption] = useState<string>(
-    isStringArray(items) ? items[0] : items[0].text
-  );
+  const stringsFilter: FilterType<string> = (item) => {
+    return item !== state.currentOption;
+  };
 
-  const { componentsFilter, stringsFilter } = useFilters(currentOption);
+  const componentsFilter: FilterType<IComponentItem> = (item) => {
+    return item.text !== state.currentOption;
+  };
 
   const mapper: MapperType =
     ({ btnClassName, itemClassName }) =>
@@ -25,23 +33,30 @@ export const useSelectDropDown = (
               className={btnClassName}
               type="button"
               onClick={() => {
-                setCurrentOption(item);
-                setIsOpen(false);
+                setTimeout(() => {
+                  dispatch({ type: DispatchTypes.CLOSE });
+                  dispatch({ type: DispatchTypes.SET_CURRENT, payload: item });
+                }, ANIMATION_DELAY);
               }}
             >
               {item}
             </button>
           ) : (
-            item.render(() => setCurrentOption(item.text))
+            item.render(() => {
+              setTimeout(() => {
+                dispatch({ type: DispatchTypes.CLOSE });
+                dispatch({
+                  type: DispatchTypes.SET_CURRENT,
+                  payload: item.text,
+                });
+              }, ANIMATION_DELAY);
+            })
           )}
         </li>
       );
     };
 
   return {
-    currentOption,
-    isOpen,
-    setIsOpen,
     componentsFilter,
     stringsFilter,
     mapper,
