@@ -12,11 +12,7 @@ export const Header: FC = () => {
       <div className="container header__wrapper">
         <h1 className="header__title">Личный кабинет</h1>
       </div>
-      <select className="header__select post-filter">
-        <option className="post-filter__option" value="best">
-          Лучшие
-        </option>
-      </select>
+
       <div className="header__top">
         <div className="container header__top-wrapper">
           <div className="header__user-block">
