@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { withSelectDropdown } from "@src/shared/ui/dropdown";
 import { IComponentItem } from "@src/shared/ui/dropdown/lib/types";
-import { IconComment, IconUp } from "@src/shared/ui/icons";
+import { IconUp } from "@src/shared/ui/icons";
 import cn from "classnames";
 
 interface PostFilterProps {
@@ -20,7 +20,6 @@ export const PostFilter: FC<PostFilterProps> = ({ items, defaultChoice }) => {
       itemClassName="post-filter__item options__item"
       listClassName="list-reset options__content"
       closeBtnClassName="options__close interactive-1 interactive-1--warn"
-      iconElement={<IconComment />}
       directionIconElement={
         <IconUp className={cn("options__icon-direction")} />
       }

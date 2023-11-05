@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, RefObject } from "react";
 
 import cn from "classnames";
 
@@ -10,6 +10,7 @@ import {
 } from "./../lib/types/index";
 import styles from "./style.module.scss";
 import {
+  ANIMATION_DELAY,
   DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS,
   DEFAULT_DROPDOWN_BTN_CLASS,
 } from "../lib/config";
@@ -19,9 +20,11 @@ interface DropdownSelectBtnProps {
   items: string[] | IComponentItem[];
   mainBtnClassName?: string;
   directionIcon?: ReactElement;
+  iconElement?: ReactElement;
   currentSelect: string;
-  state: StateType;
   dispatch: DropdownDispatch;
+  state: StateType;
+  btnRef: RefObject<HTMLButtonElement>;
 }
 
 export const DropdownSelectBtn: FC<DropdownSelectBtnProps> = ({
@@ -29,18 +32,24 @@ export const DropdownSelectBtn: FC<DropdownSelectBtnProps> = ({
   items,
   state,
   dispatch,
+  iconElement,
   directionIcon = "",
+  btnRef,
 }) => {
   return (
     <button
+      ref={btnRef}
       onClick={() => {
-        dispatch({ type: DispatchTypes.TOGGLE });
+        setTimeout(() => {
+          dispatch({ type: DispatchTypes.TOGGLE });
+        }, ANIMATION_DELAY);
       }}
       className={cn(mainBtnClassName, styles[DEFAULT_DROPDOWN_BTN_CLASS], {
         [styles[DEFAULT_DROPDOWN_BTN_ACTIVE_CLASS]]: state.isOpen,
       })}
       type="button"
     >
+      {iconElement || ""}
       {isStringArray(items) || !state.currentOption
         ? ""
         : items.find((it) => it.text === state.currentOption)!.icon}
