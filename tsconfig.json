@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "es2021",
-    ],
+    "lib": ["dom", "es2021"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "module": "esnext",
     "target": "es2021",
     "moduleResolution": "node",
@@ -26,21 +24,14 @@
     "outDir": "./dist",
     "plugins": [
       {
-        "name": "typescript-plugin-css-modules",
+        "name": "typescript-plugin-css-modules"
       }
-    ],
+    ]
   },
   "ts-node": {
     "compilerOptions": { "module": "commonjs" }
   },
-  "include": [
-    "src",
-    "webpack",
-    "webpack.config.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.js",
-  ],
+  "include": ["src", "webpack", "webpack.config.ts"],
+  "exclude": ["node_modules", "**/*.js", "./src/index.tsx"],
   "extends": "./tsconfig.paths.json"
 }

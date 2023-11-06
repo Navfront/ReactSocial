@@ -2,6 +2,10 @@
   position: relative;
   z-index: 2;
 
+  &__inner {
+    font-size: inherit;
+  }
+
   &__content {
     z-index: 2;
     position: absolute;
