@@ -42,6 +42,7 @@ export const Dropdown: FC<IDropdown> = ({
       })}
     >
       <div
+        className={styles.dropdown__inner}
         onClick={() => {
           handleOpen();
         }}
