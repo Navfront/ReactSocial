@@ -5,7 +5,11 @@ import { IPost } from "@entities/post/types";
 interface IPostCardProps {
   post: IPost;
   optionsComponent: (postId: string) => ReactElement;
-  likesComponent: (postId: string) => ReactElement;
+  likesComponent: (
+    postId: string,
+    likesCount: number,
+    myLike: IPost["myLike"]
+  ) => ReactElement;
   commentsComponent: (postId: string) => ReactElement;
   controlsComponent: (postId: string) => ReactElement;
 }
@@ -62,22 +66,7 @@ export const PostCard: FC<IPostCardProps> = ({
       </div>
 
       <div className="post__likes">
-        {likesComponent(post.id)}
-        {/* <div className="likes">
-          <button className="likes__btn" type="button">
-            <span className="visually-hidden">Лайкнуть</span>
-            <svg width="19" height="10" viewBox="0 0 19 10" fill="none">
-              <path d="M9.5 0L0 10H19L9.5 0Z" fill="currentColor" />
-            </svg>
-          </button>
-          <span className="likes__count">199</span>
-          <button className="likes__btn likes__btn--down" type="button">
-            <span className="visually-hidden">Лайкнуть</span>
-            <svg width="19" height="10" viewBox="0 0 19 10" fill="none">
-              <path d="M9.5 0L0 10H19L9.5 0Z" fill="currentColor" />
-            </svg>
-          </button>
-        </div> */}
+        {likesComponent(post.id, post.likesCount, post.myLike)}
       </div>
       <div className="post__options">{optionsComponent(post.id)}</div>
       <div className="post__controls">

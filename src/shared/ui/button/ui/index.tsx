@@ -29,6 +29,7 @@ interface IButtonProps extends PropsWithChildren {
   iconPosition?: keyof typeof IconPositions;
   type?: keyof typeof BtnTypes;
   href?: string;
+  dataTestid?: string;
 }
 
 const Button: ForwardRefRenderFunction<
@@ -43,31 +44,34 @@ const Button: ForwardRefRenderFunction<
     type = "button",
     onClick,
     href,
+    dataTestid,
   },
   ref
 ) => {
   return href ? (
-    <button
-      className={cn(className, styles.btn)}
-      ref={ref as LegacyRef<HTMLButtonElement>}
-      onClick={onClick}
-      type={type}
-    >
-      {icon && iconPosition === "LEFT" ? icon : ""}
-      {children}
-      {icon && iconPosition === "RIGHT" ? icon : ""}
-    </button>
-  ) : (
     <a
       href={href}
       className={cn(className, styles.btn)}
       ref={ref as LegacyRef<HTMLAnchorElement>}
       onClick={onClick}
+      data-testid={dataTestid}
     >
       {icon && iconPosition === "LEFT" ? icon : ""}
       {children}
       {icon && iconPosition === "RIGHT" ? icon : ""}
     </a>
+  ) : (
+    <button
+      className={cn(className, styles.btn)}
+      ref={ref as LegacyRef<HTMLButtonElement>}
+      onClick={onClick}
+      type={type}
+      data-testid={dataTestid}
+    >
+      {icon && iconPosition === "LEFT" ? icon : ""}
+      {children}
+      {icon && iconPosition === "RIGHT" ? icon : ""}
+    </button>
   );
 };
 

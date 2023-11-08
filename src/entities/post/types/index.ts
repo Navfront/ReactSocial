@@ -1,3 +1,5 @@
+import { LikeType } from "@src/shared/types";
+
 export interface IAuthor {
   id: string;
   name: string;
@@ -10,4 +12,6 @@ export interface IPost {
   imgSrc: string;
   published: string;
   author: IAuthor;
+  likesCount: number;
+  myLike: LikeType;
 }

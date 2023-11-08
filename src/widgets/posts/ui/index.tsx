@@ -1,10 +1,12 @@
 import { FC } from "react";
 
 import { PostCard } from "@entities/post/components/post-card";
+import { PostLikes } from "@entities/post/components/post-likes";
 import { PostOptions } from "@entities/post/components/post-options/ui";
 import { IPost } from "@entities/post/types";
 import { ComplainBtn } from "@src/features/post/complain-post";
 import { HidePostBtn } from "@src/features/post/hide-post";
+import { LikePost } from "@src/features/post/like-post";
 import { SavePostBtn } from "@src/features/post/save-post";
 import { SharePostBtn } from "@src/features/post/share-post/ui";
 import { Button } from "@src/shared/ui/button";
@@ -16,7 +18,7 @@ interface IPostsProps {
 }
 const posts: IPost[] = new Array(3)
   .fill({})
-  .map((p, idx) => ({ ...p, id: idx }));
+  .map((p, idx) => ({ ...p, id: idx, likesCount: 99, myLike: 0 }));
 
 export const Posts: FC<IPostsProps> = ({ sectionTitle }) => (
   <section className="section posts">
@@ -27,7 +29,14 @@ export const Posts: FC<IPostsProps> = ({ sectionTitle }) => (
           key={idx}
           post={post}
           commentsComponent={() => <></>}
-          likesComponent={() => <></>}
+          likesComponent={(postId, likesCount, myLike) => (
+            <PostLikes
+              postId={postId}
+              myLike={myLike}
+              likesCount={likesCount}
+              theLikeFeature={LikePost}
+            />
+          )}
           controlsComponent={() => <></>}
           optionsComponent={(postId) => (
             <PostOptions

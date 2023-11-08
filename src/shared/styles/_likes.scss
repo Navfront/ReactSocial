@@ -1,4 +1,8 @@
 .likes {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 7px 4px;
   color: $color-c4;
 
   @media (min-width: $media-tab-min) {
@@ -6,10 +10,12 @@
   }
 
   &__btn {
+    cursor: pointer;
     transition: 0.15s ease-in color, 0.15s ease-in opacity;
 
     &:focus-visible:not(:active),
-    &:hover:not(:focus):not(:active) {
+    &:hover:not(:focus):not(:active),
+    &--active {
       color: $color-lime;
     }
 
@@ -17,7 +23,8 @@
       transform: rotate(180deg);
 
       &:focus-visible:not(:active),
-      &:hover:not(:focus):not(:active) {
+      &:hover:not(:focus):not(:active),
+      &.likes__btn--active {
         color: $color-pink;
       }
     }
