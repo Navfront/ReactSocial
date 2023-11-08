@@ -25,21 +25,25 @@ export const PostLikes: FC<IPostLikesProps> = ({
     theLikeFeature
   );
   return (
-    <div className="likes">
+    <div className="likes" data-testid="likes">
       <Button
         className={cn("likes__btn", { "likes__btn--active": like === 1 })}
         icon={<IconLike className="likes__icon" />}
         onClick={likeHandler}
+        dataTestid="likes-btn-up"
       >
         <span className="visually-hidden">Лайкнуть</span>
       </Button>
-      <span className="likes__count">{likesCount + like}</span>
+      <span className="likes__count" data-testid="likes-counter">
+        {likesCount + like}
+      </span>
       <Button
         className={cn("likes__btn likes__btn--down", {
           "likes__btn--active": like === -1,
         })}
         icon={<IconLike className="likes__icon" />}
         onClick={dislikeHandler}
+        dataTestid="likes-btn-down"
       >
         <span className="visually-hidden">Дизлайкнуть</span>
       </Button>
