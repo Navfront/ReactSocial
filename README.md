@@ -1,3 +1,3 @@
 # React Social Project
 
-## Starts client on http://localhost:3333
+## https://social.navfront.ru (in development)
