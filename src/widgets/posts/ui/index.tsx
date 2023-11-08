@@ -6,6 +6,7 @@ import { PostOptions } from "@entities/post/components/post-options/ui";
 import { IPost } from "@entities/post/types";
 import { ComplainBtn } from "@src/features/post/complain-post";
 import { HidePostBtn } from "@src/features/post/hide-post";
+import { LikePost } from "@src/features/post/like-post";
 import { SavePostBtn } from "@src/features/post/save-post";
 import { SharePostBtn } from "@src/features/post/share-post/ui";
 import { Button } from "@src/shared/ui/button";
@@ -33,9 +34,7 @@ export const Posts: FC<IPostsProps> = ({ sectionTitle }) => (
               postId={postId}
               myLike={myLike}
               likesCount={likesCount}
-              theLikeFeature={(postId, isLiked) => {
-                console.log("feature", postId, isLiked);
-              }}
+              theLikeFeature={LikePost}
             />
           )}
           controlsComponent={() => <></>}
