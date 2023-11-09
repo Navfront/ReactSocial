@@ -1,6 +1,8 @@
 import { FC } from "react";
 
 import { PageNavigation } from "@entities/navigation/page-navigation";
+import { UserBlock } from "@entities/user/components/user-block";
+import { authOnReddit } from "@src/features/auth";
 
 import { useFeatureItems } from "../hooks/use-feature-items";
 
@@ -15,18 +17,7 @@ export const Header: FC = () => {
 
       <div className="header__top">
         <div className="container header__top-wrapper">
-          <div className="header__user-block">
-            <a className="user-block__link" href="#">
-              <img
-                className="user-block__img"
-                src="ava.jpg"
-                alt="Аватар пользователя"
-                height="30"
-                width="30"
-              />
-              <span className="user-block__username">Константин</span>
-            </a>
-          </div>
+          <UserBlock className="header__user-block" onClick={authOnReddit} />
           <form className="header__search search" action="#" method="get">
             <input
               className="search__input"
