@@ -8,3 +8,4 @@ export { IconEye } from "./ui/eye";
 export { IconPen } from "./ui/pen";
 export { IconRocket } from "./ui/rocket";
 export { IconUp } from "./ui/up";
+export { IconAnonymous } from "./ui/anonymous";
