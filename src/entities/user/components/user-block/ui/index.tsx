@@ -1,11 +1,12 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 
-import { IUser } from "@entities/auth/types";
+import { IUser } from "@entities/user/types";
 import { PipeFnType, pipe, prevent } from "@src/shared/lib/react/events-pipe";
 import { Button } from "@src/shared/ui/button";
+import { IconAnonymous } from "@src/shared/ui/icons";
 import cn from "classnames";
 
-interface UserBlockProps {
+interface UserBlockProps extends PropsWithChildren {
   user?: IUser;
   className?: string;
   href?: string;
@@ -13,12 +14,13 @@ interface UserBlockProps {
 }
 
 export const UserBlock: FC<UserBlockProps> = ({
-  user = { imgAva: "ava.jpg", username: "Аноним" },
+  user = { imgAva: "", username: "Аноним" },
   onClick = (e) => e,
   className = "",
   href = "#",
 }) => {
   const { imgAva, username } = user;
+
   return (
     <div className={cn("user-block", className)}>
       <Button
@@ -26,13 +28,17 @@ export const UserBlock: FC<UserBlockProps> = ({
         href={href}
         onClick={pipe(prevent, onClick)}
       >
-        <img
-          className="user-block__img"
-          src={imgAva}
-          alt="Аватар пользователя"
-          height="30"
-          width="30"
-        />
+        {imgAva ? (
+          <img
+            className="user-block__img"
+            src={imgAva}
+            alt="Аватар пользователя"
+            height="30"
+            width="30"
+          />
+        ) : (
+          <IconAnonymous className="user-block__img" size={30} />
+        )}
         <span className="user-block__username">{username}</span>
       </Button>
     </div>
