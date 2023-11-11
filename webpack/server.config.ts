@@ -1,5 +1,6 @@
 import path from "path";
 
+import Dotenv from "dotenv-webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { Configuration } from "webpack";
@@ -34,6 +35,7 @@ const serverConfig: Configuration = {
     }),
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin(),
+    new Dotenv(),
   ],
   module: {
     rules: Object.values(Loaders).map((el) => el.server),

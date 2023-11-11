@@ -4,7 +4,7 @@ markup/node_modules
 /.pnp
 .pnp.js
 .idea
-.env
+*.env
 .swc
 
 # testing
