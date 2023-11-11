@@ -39,6 +39,9 @@ jobs:
       - name: Set known-hosts
         run: echo "${{ secrets.KNOWN_HOSTS }}" > "$HOME/.ssh/known_hosts"
 
+      - name: Create .env
+        run: echo "CLIENT_ID=${{ secrets.CLIENT_ID }}" > .env && echo "REDIRECT_URI=${{ secrets.REDIRECT_URI }}" >> .env && echo "SECRET=${{ secrets.API_SECRET }}" >> .env
+
       - name: Build project
         run: npm run build
 
