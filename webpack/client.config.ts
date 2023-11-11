@@ -3,6 +3,7 @@ import path from "path";
 import LoadablePlugin from "@loadable/webpack-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import CssoWebpackPlugin from "csso-webpack-plugin";
+import Dotenv from "dotenv-webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -74,6 +75,7 @@ const plugins: WebpackPluginInstance[] = [
           analyzerMode: withReport ? "server" : "disabled",
         }) as unknown as WebpackPluginInstance,
       ]),
+  new Dotenv(),
 ];
 
 const clientConfig: Configuration = {
