@@ -13,7 +13,7 @@ export const getHtmlTemplate = (props: {
 }): TTemplate => ({
   header: `
     <!DOCTYPE html>
-      <html lang="en">
+      <html lang="ru">
         <head>
             <meta charset="UTF-8">
             <link rel="icon" href="./favicon.svg" />
