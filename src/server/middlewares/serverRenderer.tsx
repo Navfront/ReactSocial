@@ -1,32 +1,51 @@
 import { ChunkExtractor } from "@loadable/server";
 import { IS_RENDER_TO_STREAM } from "@server/constants";
 import { getHtmlTemplate } from "@server/template";
-import { ROUTE_CONSTANTS } from "@shared/config";
 import { App } from "@src/app";
+import { AxiosError } from "axios";
 import { Request, Response, RequestHandler } from "express";
 import { renderToPipeableStream, renderToString } from "react-dom/server";
 import { HelmetProvider, FilledContext } from "react-helmet-async";
 import { StaticRouter } from "react-router-dom/server";
 
+import { AuthResponseType, getToken } from "../api";
+import { API_SECRET, CLIENT_ID, REDIRECT_URI } from "../config";
+
 const serverRenderer =
   (chunkExtractor: ChunkExtractor): RequestHandler =>
   async (req: Request, res: Response) => {
-    const isPageAvailable = (
-      Object.values(ROUTE_CONSTANTS) as string[]
-    ).includes(req.path);
+    const code = (req.query.code as string | undefined) || "";
 
-    if (!isPageAvailable) {
-      req.url = ROUTE_CONSTANTS.NOT_FOUND;
-    }
+    let data: AuthResponseType | null = null;
 
     const location: string = req.url;
+    const cookieToken = req.cookies.token as string;
+
+    if (code) {
+      try {
+        const { data: respData, status } = await getToken(
+          code,
+          REDIRECT_URI,
+          CLIENT_ID,
+          API_SECRET
+        );
+
+        if (status >= 200 && status <= 299) {
+          data = respData;
+          res.cookie("token", data.access_token, { httpOnly: true });
+        }
+      } catch (err) {
+        const e = err as AxiosError;
+        console.log(e.message);
+      }
+    }
 
     const helmetContext = {};
 
     const jsx = (
       <HelmetProvider context={helmetContext}>
         <StaticRouter location={location}>
-          <App />
+          <App token={data?.access_token || cookieToken || ""} />
         </StaticRouter>
       </HelmetProvider>
     );
